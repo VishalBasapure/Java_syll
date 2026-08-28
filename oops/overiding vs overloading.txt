@@ -1,0 +1,5 @@
+parameter         | override   	    | overload
+inheritance 	  | must			| optional
+signature         | same name 		| same name but diff argument
+type 	    	  | runtime			| compile
+constructor 	  | not possible    | possible
