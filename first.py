@@ -1,5 +1,3 @@
-#how to create class in py
-class x:
-    def __init__(self):
-        print("Hello")
-x()
+for i in range(5):
+    print(i)
+print(i)
