@@ -22,26 +22,26 @@ public class prod_con_threads {
     }
 }
 class Buffer{
-    int [] buffer=new int[5];
+    int [] Buffer=new int[5];
     int count=0,in=0,out=0;
     //in-pos at where new item is produced ,out-consumed from 
     synchronized void produce(int value){
-        //buffer full =>make producer wait indefinetly
-        while(count==buffer.length){
+        //Buffer full =>make producer wait indefinetly
+        while(count==Buffer.length){
             try{
                 System.out.println("Buffer full.Producer Waiting");
                 wait();
             }
             catch(InterruptedException ie){}
         }
-        buffer[in]=value;
+        Buffer[in]=value;
         System.out.println("Produced "+value+" at "+in);
-        in=(in+1)%buffer.length;
+        in=(in+1)%Buffer.length;
         count++;
         notify();
     }
     synchronized void consume(){
-        //buffer Empty=> make Consumer Wait Indefinitely
+        //Buffer Empty=> make Consumer Wait Indefinitely
         while(count==0)
         {
             try{
@@ -49,9 +49,9 @@ class Buffer{
                 wait();
             }catch(InterruptedException ie){}
         }
-        int value=buffer[out];
+        int value=Buffer[out];
         System.out.println("Consume "+value+" at "+out);
-        out=(out+1)%buffer.length;
+        out=(out+1)%Buffer.length;
         count--;
         notify();
     }
