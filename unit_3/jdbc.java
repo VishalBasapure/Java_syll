@@ -1,15 +1,21 @@
-
 import java.sql.*;
 
-public class jdbc{
+public class jdbc {
+
     public static void main(String[] args) {
-        String url="jdbc:sqlite:c://database/sample.db";
+
+        String url = "jdbc:sqlite:C:/database/sample.db";
+
         try {
-            Connection con =DriverManager.getConnection(url);
-            System.out.println("Connection to Sqlite");
+            Connection con =
+                DriverManager.getConnection(url);
+
+            System.out.println("Connection to SQLite successful!");
+
             con.close();
+
         } catch (Exception e) {
-            System.out.println("Error in conection");
+            e.printStackTrace();
         }
     }
 }
